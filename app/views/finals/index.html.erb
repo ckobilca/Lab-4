@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Namestring</th>
+      <th>Email</th>
+      <th>String</th>
+      <th>Suff</th>
+      <th>Integer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finals.each do |final| %>
+      <tr>
+        <td><%= final.namestring %></td>
+        <td><%= final.email %></td>
+        <td><%= final.string %></td>
+        <td><%= final.suff %></td>
+        <td><%= final.integer %></td>
+        <td><%= link_to 'Show', final %></td>
+        <td><%= link_to 'Edit', edit_final_path(final) %></td>
+        <td><%= link_to 'Destroy', final, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Final', new_final_path %>
